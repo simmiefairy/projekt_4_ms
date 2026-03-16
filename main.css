@@ -1,0 +1,216 @@
+/* Nulstil standard margin/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ms-red: #e30613;
+    --ms-light-yellow: #fff4d1;
+    --ms-dark-yellow: #f9d8a3;
+    --text-black: #1a1a1a;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--text-black);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container-small {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header & Utility */
+.utility-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.utility-nav a {
+    text-decoration: none;
+    color: var(--text-black);
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+/* Navigation */
+.main-nav {
+    background-color: var(--ms-light-yellow);
+    border-top: 1px solid #eee;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    align-items: stretch;
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: var(--text-black);
+    font-weight: bold;
+}
+
+.stot-btn {
+    background-color: var(--ms-dark-yellow);
+    margin-left: auto; /* Skubber "Støt" helt til højre */
+}
+
+.stot-btn a {
+    padding: 15px 40px;
+    text-decoration: none;
+    color: var(--text-black);
+    font-weight: 900;
+    display: block;
+}
+
+/* Main Content */
+.main-title {
+    color: var(--ms-red);
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+/* Slider Section */
+.slider-box {
+    position: relative;
+    width: 100%;
+}
+
+.badge-red {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--ms-red);
+    color: white;
+    padding: 5px 15px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.slider-img {
+    width: 100%;
+    display: block;
+}
+
+.slider-arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    transform: translateY(-50%);
+}
+
+.arrow {
+    font-size: 2rem;
+    color: var(--ms-red);
+    cursor: pointer;
+    background: rgba(255,255,255,0.2);
+    padding: 10px;
+}
+
+.slider-dots {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.active {
+    background-color: var(--ms-red);
+    border-color: var(--ms-red);
+}
+
+/* Partner Bar */
+.partner-bar {
+    background-color: var(--ms-red);
+    padding: 20px 0;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.partner-logos img {
+    max-height: 60px;
+    background: white; /* Simulerer hvid boks omkring logoer hvis de ikke er gennemsigtige */
+    padding: 5px;
+}
+
+/* Footer */
+.main-footer {
+    background-color: black;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-col h3 {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    line-height: 2;
+    text-decoration: underline;
+}
+
+.btn-tilmeld {
+    background-color: var(--ms-dark-yellow);
+    border: none;
+    padding: 8px 25px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.address-info {
+    font-size: 0.7rem;
+    margin-top: 30px;
+    color: #ccc;
+}
