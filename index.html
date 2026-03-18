@@ -20,13 +20,36 @@
 
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="https://via.placeholder.com/350x70?text=MELLEMFOLKELIGT+SAMVIRKE" alt="Mellemfolkeligt Samvirke">
+                    <img src="img/logo.png" alt="Mellemfolkeligt Samvirke">
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="#" class="nav-btn">OM OS <span>▼</span></a></li>
-                        <li><a href="#" class="nav-btn">GØR EN FORSKEL <span>▼</span></a></li>
-                        <li><a href="#" class="nav-btn">BLIV MEDLEM <span>▼</span></a></li>
+                        <li class="dropdown-container">
+                            <a href="#" class="nav-btn dropdown-toggle">OM OS <span>▼</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Hvem er vi?</a></li>
+                                <li><a href="#">Vores historie</a></li>
+                                <li><a href="#">Kontakt os</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-container">
+                            <a href="#" class="nav-btn dropdown-toggle">GØR EN FORSKEL <span>▼</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Kampagner</a></li>
+                                <li><a href="#">Klima</a></li>
+                                <li><a href="#">Fattigdom</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-container">
+                            <a href="#" class="nav-btn dropdown-toggle">BLIV MEDLEM <span>▼</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Medlemsfordele</a></li>
+                                <li><a href="#">Giv et bidrag</a></li>
+                            </ul>
+                        </li>
+
                         <li><a href="#" class="btn-red">FRIVILLIG</a></li>
                     </ul>
                 </nav>
@@ -105,5 +128,6 @@
         </div>
     </footer>
 
+    <script src="js/dropdown.js"></script>
 </body>
 </html>

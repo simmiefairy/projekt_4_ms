@@ -59,10 +59,16 @@ body {
     justify-content: space-between;
     align-items: flex-end;
 }
+.logo {
+    max-width: 450px; /* Juster dette tal op eller ned for at ændre størrelsen */
+    width: 100%;      /* Sørger for at den er responsiv på mindre skærme */
+    padding-bottom: 10px; /* Lidt luft under logoet, så det flugter pænt med menuen */
+}
 
 .logo img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    display: block;
 }
 
 .main-nav ul {
@@ -95,6 +101,27 @@ body {
     font-weight: bold;
     font-size: 16px;
     border: none;
+}
+/* Selve dropdown menuen */
+.dropdown-menu {
+    display: none; /* VIGTIGT: Dette er koden der skjuler den! */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1.5px solid var(--text-black);
+    list-style: none;
+    min-width: 200px;
+    z-index: 100;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 5px;
+    gap: 0; 
+}
+
+/* Klassen som JavaScriptet tilføjer for at vise menuen */
+.dropdown-menu.show {
+    display: flex !important; /* Tvinger menuen til at blive vist, selvom den normalt er skjult */
 }
 
 /* --- HOVEDINDHOLD --- */
