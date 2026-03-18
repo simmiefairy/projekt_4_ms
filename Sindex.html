@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Søgefunktion</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <!-- Ekstern CSS -->
+  <link rel="stylesheet" href="Sstyle.css"/>
+</head>
+<body>
+
+<div class="soeg-container" id="soegContainer">
+
+  <!-- Søge-ikonet — altid synligt -->
+  <button class="soeg-ikon" id="soegIkon">&#128269;</button>
+
+  <!-- Søgebaren — folder ud -->
+  <div class="soeg-bar" id="soegBar">
+    <input
+      type="text"
+      class="soeg-input"
+      id="soegInput"
+      placeholder="Søg efter en kage..."
+      autocomplete="off"
+    />
+  </div>
+
+  <!-- Dropdown menu -->
+  <div class="dropdown" id="dropdown"></div>
+
+  <!-- Valgt element -->
+  <div class="valgt-tekst" id="valgtTekst"></div>
+
+</div>
+
+<!-- Ekstern JavaScript -->
+<script src="SMain.js"></script>
+
+</body>
+</html>
