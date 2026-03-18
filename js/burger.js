@@ -22,8 +22,6 @@ function toggleMenu() {
 burgerBtn.addEventListener('click', toggleMenu);
 closeBtn.addEventListener('click', toggleMenu);
 
-
-
 const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
 for (let i = 0; i < dropdownToggles.length; i++) {
