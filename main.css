@@ -209,9 +209,10 @@ img {vertical-align: middle;}
 
 .slide-title {
   position: absolute;
+  
   top: 0;
-  left: 30%;
-  transform: translate(-50%, -50%);
+  left: 0%;
+  transform: translate(0%, -50%);
   z-index: 10;
 
   color: white;
@@ -220,12 +221,14 @@ img {vertical-align: middle;}
 
   padding: 10px 20px;
   background: #ED3833; /* gør den læsbar */
-  border-radius: 8px;
+  border-radius: 0px;
+  
 }
 /*Wrapper så overskrift kan stikke ud*/
 .slideshow-wrapper {
   position: relative;
   overflow: visible; /* her må ting godt stikke ud */
+  margin-top: 60px; /*Breaket mellem slideshow og hvem er vi teksten*/
 }
 
 /* Slideshow container */
@@ -276,13 +279,13 @@ img {vertical-align: middle;}
   text-align: right;
 }
 
-/* Number text (1/3 etc) */
+/* Number text (1/4 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  top: 0;
+  top: 90%;
 }
 
 /* The dots/bullets/indicators */
