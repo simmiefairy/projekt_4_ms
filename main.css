@@ -5,8 +5,8 @@
 }
 
 :root {
-    --ms-red: #ed3833; /* En lysere, mere intens rød brugt på dette design */
-    --ms-yellow: #ffea96; /* Den specifikke gule baggrund */
+    --ms-red: #ed3833; 
+    --ms-yellow: #ffea96; 
     --text-black: #000000;
 }
 
@@ -76,6 +76,7 @@ body {
     display: flex;
     list-style: none;
     gap: 15px;
+    align-items: center;
 }
 
 .nav-btn {
@@ -86,7 +87,7 @@ body {
     font-weight: bold;
     font-size: 14px;
     border: 1.5px solid var(--text-black); 
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 .nav-btn span {
@@ -103,6 +104,7 @@ body {
     font-size: 16px;
     border: none;
 }
+
 /* --- DROPDOWN MENU (Desktop) --- */
 .dropdown-container {
     position: relative; 
@@ -363,7 +365,7 @@ img {vertical-align: middle;}
     cursor: pointer;
 }
 
-/* --- BURGERMENU IKONER (Skjult på desktop) --- */
+/* --- BURGERMENU IKONER --- */
 .hamburger-btn {
     display: none;
     background: none;
@@ -393,7 +395,7 @@ img {vertical-align: middle;}
     right: 20px;
 }
 
-/* --- MOBIL RESPONSIVITET (Inkluderer burgermenu layout) --- */
+/* --- MOBIL RESPONSIVITET --- */
 @media (max-width: 900px) {
     .top-utility {
         display: none; 
@@ -428,9 +430,10 @@ img {vertical-align: middle;}
         display: block;
     }
 
-    .main-nav ul {
+    .main-nav > ul {
         flex-direction: column;
         gap: 25px;
+        align-items: flex-start;
     }
 
     .nav-btn {
@@ -440,14 +443,14 @@ img {vertical-align: middle;}
         padding: 0;
     }
     
-.dropdown-menu {
+    .dropdown-menu {
         position: static;
         border: none;
         padding-left: 20px;
         margin-top: 15px;
         gap: 15px;
-        display: flex; 
-        background-color: transparent; /* Dette fjerner den gule kasse på mobilen! */
+        display: none; /* VIGTIGT: Skjuler dropdowns som standard på mobil */
+        background-color: transparent; 
     }
     
     .dropdown-menu li a {
@@ -455,5 +458,6 @@ img {vertical-align: middle;}
         font-size: 18px;
         font-weight: bold;
         text-decoration: none;
+        padding: 8px 0;
     }
 }
