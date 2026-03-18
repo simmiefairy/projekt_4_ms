@@ -1,30 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+    // Vi tager fat i hele containeren (både knap og menu) i stedet for kun knappen
+    const dropdownContainers = document.querySelectorAll(".dropdown-container");
 
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener("click", function(e) {
-            e.preventDefault(); 
+    dropdownContainers.forEach(container => {
+        const dropdownMenu = container.querySelector(".dropdown-menu");
 
-            const dropdownMenu = this.nextElementSibling;
-
-            // Lukker alle andre åbne menuer
+        // Når musen kommer ind over "zonen" (knap ELLER menu)
+        container.addEventListener("mouseenter", () => {
+            // Skjul andre åbne menuer for en sikkerheds skyld
             document.querySelectorAll(".dropdown-menu").forEach(menu => {
                 if (menu !== dropdownMenu) {
                     menu.classList.remove("show");
                 }
             });
-
-            // Åbner/lukker den menu man klikkede på
-            dropdownMenu.classList.toggle("show");
+            
+            // Åbn denne menu
+            dropdownMenu.classList.add("show");
         });
-    });
 
-    // Lukker menuen, hvis man klikker et vilkårligt sted udenfor knapperne
-    window.addEventListener("click", function(e) {
-        if (!e.target.closest(".dropdown-container")) {
-            document.querySelectorAll(".dropdown-menu").forEach(menu => {
-                menu.classList.remove("show");
-            });
-        }
+        // Når musen forlader "zonen" helt (kører væk fra både knap og menu)
+        container.addEventListener("mouseleave", () => {
+            dropdownMenu.classList.remove("show");
+        });
     });
 });
