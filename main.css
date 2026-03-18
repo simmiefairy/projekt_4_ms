@@ -32,9 +32,13 @@ body {
 /* --- HEADER --- */
 .main-header {
     background-color: var(--ms-yellow);
-    border-bottom: 4px solid var(--text-black); /* Tyk sort kant i bunden */
+    border-bottom: 4px solid var(--text-black);
     padding-top: 10px;
     padding-bottom: 20px;
+    
+    /* Tilføj disse to linjer: */
+    position: relative;
+    z-index: 999;
 }
 
 .top-utility {
@@ -71,7 +75,7 @@ body {
     display: block;
 }
 
-.main-nav ul {
+.main-nav > ul {
     display: flex;
     list-style: none;
     gap: 15px;
@@ -124,6 +128,40 @@ body {
     display: flex !important; /* Tvinger menuen til at blive vist, selvom den normalt er skjult */
 }
 
+.dropdown-container {
+    position: relative; 
+}
+
+/* --- NY KODE TIL MENU-LINKS --- */
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 15px;
+    color: var(--text-black);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f5f5f5; /* Giver en lys baggrund, når musen kører over */
+    color: var(--ms-red);
+}
+/* ------------------------------- */
+
+/* --- HOVEDINDHOLD --- */
+.main-title {
+    color: var(--ms-red);
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    max-width: 850px;
+}
 /* --- HOVEDINDHOLD --- */
 .main-title {
     color: var(--ms-red);
