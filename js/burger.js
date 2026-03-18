@@ -1,7 +1,4 @@
-// 1. FEJLFINDING
-console.log("Burger.js er indlæst og klar!");
 
-// --- ÅBN/LUK SELVE BURGERMENUEN ---
 const navMenu = document.querySelector('.main-nav');
 const burgerBtn = document.querySelector('.hamburger-btn');
 const closeBtn = document.querySelector('.close-btn');
@@ -26,7 +23,7 @@ burgerBtn.addEventListener('click', toggleMenu);
 closeBtn.addEventListener('click', toggleMenu);
 
 
-// --- ACCORDION DROPDOWNS (Fold-ud menuer på mobil) ---
+
 const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
 for (let i = 0; i < dropdownToggles.length; i++) {
@@ -35,16 +32,13 @@ for (let i = 0; i < dropdownToggles.length; i++) {
 
     toggleKnap.addEventListener('click', function(event) {
         
-        // VIGTIGT: Kør kun denne kode, hvis skærmen er 900px eller mindre!
-        // Dette forhindrer filen i at ødelægge din desktop-menu.
+
         if (window.innerWidth <= 900) {
             
-            event.preventDefault(); // Forhindrer at skærmen hopper til toppen
+            event.preventDefault(); 
 
-            // Finder <ul> menuen inde i det samme <li> tag som knappen
             let underMenu = toggleKnap.parentElement.querySelector('.dropdown-menu');
 
-            // Tilføjer eller fjerner klassen 'show' (som viser menuen)
             if (underMenu !== null) {
                 underMenu.classList.toggle('show');
             }
