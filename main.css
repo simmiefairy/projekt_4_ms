@@ -1,4 +1,3 @@
-/* Grundlæggende nulstilling */
 * {
     margin: 0;
     padding: 0;
@@ -104,29 +103,30 @@ body {
     font-size: 16px;
     border: none;
 }
+/* --- DROPDOWN MENU (Desktop) --- */
+.dropdown-container {
+    position: relative; 
+}
 
 .dropdown-menu {
     display: none; 
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: white;
-    border: 1.5px solid var(--text-black);
+    background-color: var(--ms-yellow); 
+    border: 0px solid var(--text-black);
+    border-top: none; 
     list-style: none;
     min-width: 200px;
     z-index: 100;
     flex-direction: column;
     padding: 0;
-    margin-top: 5px;
+    margin-top: 0; 
     gap: 0; 
 }
 
 .dropdown-menu.show {
     display: flex !important; 
-}
-
-.dropdown-container {
-    position: relative; 
 }
 
 .dropdown-menu li a {
@@ -139,8 +139,8 @@ body {
 }
 
 .dropdown-menu li a:hover {
-    background-color: #f5f5f5; 
-    color: var(--ms-red);
+    background-color: white; 
+    color: var(--text-black);
 }
 
 /* --- HOVEDINDHOLD --- */
@@ -266,7 +266,7 @@ img {vertical-align: middle;}
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.dot.active, .dot:hover {
   background-color: red;
 }
 
@@ -440,13 +440,14 @@ img {vertical-align: middle;}
         padding: 0;
     }
     
-    .dropdown-menu {
+.dropdown-menu {
         position: static;
         border: none;
         padding-left: 20px;
         margin-top: 15px;
         gap: 15px;
         display: flex; 
+        background-color: transparent; /* Dette fjerner den gule kasse på mobilen! */
     }
     
     .dropdown-menu li a {
