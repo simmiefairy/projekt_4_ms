@@ -596,3 +596,8 @@ img {vertical-align: middle;}
 .soeg-container.har-valgt .valgt-tekst {
   opacity: 1;
 }
+
+#duf-logo {
+    max-height: 80px;
+    width: 150px;
+}
