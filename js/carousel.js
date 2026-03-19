@@ -4,7 +4,7 @@ const slides = document.querySelectorAll(".mySlides");
 const dots = document.querySelectorAll(".dot");
 
 const titles = [
-  "Grønland",
+  "Støt Grønland",
   "Gør en forskel",
   "Vores arbejde",
   "Tidselruten"
