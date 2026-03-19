@@ -490,7 +490,7 @@ img {vertical-align: middle;}
   z-index: 2;
 }
 
-.soeg-ikon:hover { transform: scale(1.05); }
+.soeg-ikon:hover {; transform: scale(1.05); }
 
 .soeg-container {
   position: relative;
