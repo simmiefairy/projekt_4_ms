@@ -1,10 +1,13 @@
 const data = [
-  { navn: "Kage",        ikon: "🎂" },
-  { navn: "Småkage",     ikon: "🍪" },
-  { navn: "Cookie",      ikon: "🍪" },
-  { navn: "Brunsviger",  ikon: "🍰" },
-  { navn: "Æblekage",    ikon: "🍏" },
-  { navn: "Citronmåne",  ikon: "🌙" },
+
+  { navn: "Gør en forskel" },
+  { navn: "Besøg os" },
+  { navn: "Om os" },
+  { navn: "Vores arbejde" },
+  { navn: "English" },
+  { navn: "Shop" },
+  { navn: "Bliv medlem" },
+  { navn: "Kalender" },
 ];
 
 let erAktiv = false;
