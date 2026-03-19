@@ -1,3 +1,7 @@
+/* Kilde/Reference: 
+Koden til dropdown hover-effekten er udviklet med hjælp og vejledning fra AI (Google Gemini), 
+med udgangspunkt i tilpasning af vores oprindelige klik-baserede menu.
+*/
 document.addEventListener("DOMContentLoaded", () => {
     // Vi tager fat i hele containeren (både knap og menu) i stedet for kun knappen
     const dropdownContainers = document.querySelectorAll(".dropdown-container");
