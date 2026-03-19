@@ -490,7 +490,7 @@ img {vertical-align: middle;}
   z-index: 2;
 }
 
-.soeg-ikon:hover {; transform: scale(1.05); }
+.soeg-ikon:hover { transform: scale(1.05); }
 
 .soeg-container {
   position: relative;
@@ -595,9 +595,4 @@ img {vertical-align: middle;}
 
 .soeg-container.har-valgt .valgt-tekst {
   opacity: 1;
-}
-
-#duf-logo {
-    max-height: 80px;
-    width: 150px;
 }
