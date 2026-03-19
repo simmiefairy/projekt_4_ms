@@ -8,17 +8,7 @@
   --border: #e0d9ce;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-  background: var(--bg);
-  font-family: 'Outfit', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 60px 20px;
-}
 
 .soeg-ikon {
   background: var(--accent);

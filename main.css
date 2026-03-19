@@ -461,3 +461,139 @@ img {vertical-align: middle;}
         padding: 8px 0;
     }
 }
+:root {
+  --bg: #f5f0e8;
+  --white: #ffffff;
+  --accent: #2d6a4f;
+  --accent-light: #d8f3dc;
+  --text: #1b1b1b;
+  --muted: #888;
+  --border: #e0d9ce;
+}
+
+
+
+.soeg-ikon {
+  background: var(--accent);
+  border: none;
+  color: white;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.soeg-ikon:hover { background: #245a42; transform: scale(1.05); }
+
+.soeg-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.soeg-bar {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.3s ease;
+  margin-left: -26px;
+  padding-left: 30px;
+}
+
+.soeg-container.aktiv .soeg-bar {
+  width: 360px;
+  opacity: 1;
+}
+
+.soeg-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  width: 100%;
+  padding: 14px 16px 14px 0;
+}
+
+.soeg-input::placeholder { color: var(--muted); }
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-light) transparent;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  z-index: 10;
+}
+
+.dropdown::-webkit-scrollbar { width: 6px; }
+.dropdown::-webkit-scrollbar-track { background: transparent; }
+.dropdown::-webkit-scrollbar-thumb { background: var(--accent-light); border-radius: 10px; }
+
+.soeg-container.dropdown-aktiv .dropdown {
+  max-height: 220px;
+  opacity: 1;
+}
+
+.dropdown-item {
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  color: var(--text);
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-item:last-child { border-bottom: none; }
+.dropdown-item:hover { background: var(--accent-light); }
+
+.dropdown-item .ikon { font-size: 1.1rem; }
+
+.ingen-resultater {
+  padding: 20px 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.valgt-tekst {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.soeg-container.har-valgt .valgt-tekst {
+  opacity: 1;
+}

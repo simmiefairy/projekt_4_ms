@@ -6,6 +6,7 @@
     <title>Mellemfolkeligt Samvirke - Nyt Design</title>
     <link rel="stylesheet" href="main.css">
     <script src="js/carousel.js" defer></script>
+    <script src="js/search.js" defer></script>
 </head>
 <body>
 
@@ -13,7 +14,35 @@
         <div class="container">
             <div class="top-utility">
                 <a href="#"><img src="img/support.svg" alt="støt logo med en hånd der holder et hjerte">STØT</a>
-                <a href="#"><img src="img/search.svg" alt="forstørrelsesglas som søge logo">SØG</a>
+                <a href="#"><img src="img/search.svg" alt="forstørrelsesglas som søge logo">
+                
+                
+                <div class="soeg-container" id="soegContainer">
+
+  <!-- Søge-ikonet — altid synligt -->
+  <button class="soeg-ikon" id="soegIkon">&#128269;</button>
+
+  <!-- Søgebaren — folder ud -->
+  <div class="soeg-bar" id="soegBar">
+    <input
+      type="text"
+      class="soeg-input"
+      id="soegInput"
+      placeholder="Søg efter en kage..."
+      autocomplete="off"
+    />
+  </div>
+
+  <!-- Dropdown menu -->
+  <div class="dropdown" id="dropdown"></div>
+
+  <!-- Valgt element -->
+  <div class="valgt-tekst" id="valgtTekst"></div>
+
+</div>
+                
+                </a>
+
                 <a href="#"><img src="img/calendar.svg" alt="Kalender logo">KALENDER</a>
                 <a href="#"><img src="img/cart.svg" alt="Indkøbsvogns logo">SHOP</a>
                 <a href="#"><img src="img/eng_flag.png" alt="Englands flag"></a>
