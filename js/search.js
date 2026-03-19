@@ -1,13 +1,12 @@
 const data = [
-
-  { navn: "Gør en forskel" },
-  { navn: "Besøg os" },
-  { navn: "Om os" },
-  { navn: "Vores arbejde" },
-  { navn: "English" },
-  { navn: "Shop" },
-  { navn: "Bliv medlem" },
-  { navn: "Kalender" },
+{ navn: "Gør en forskel", ikon: "→" },
+{ navn: "Besøg os", ikon: "→" },
+{ navn: "Om os", ikon: "→" },
+{ navn: "Vores arbejde", ikon: "→" },
+{ navn: "English", ikon: "→" },
+{ navn: "Shop", ikon: "→" },
+{ navn: "Bliv medlem", ikon: "→" },
+  { navn: "Kalender", ikon: "→" },
 ];
 
 let erAktiv = false;
