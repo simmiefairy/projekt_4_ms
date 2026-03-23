@@ -1,14 +1,21 @@
-<script>
-const form = document.querySelector("form");
+// fmain.js — clean, robust form validation for Findex.html / Fstyle.css
 
-form.addEventListener("submit", function(e) {
+// This file should be included in the page as:
+// <script src="fmain.js"></script>
+
+const form = document.querySelector('form');
+
+if (!form) {
+  console.warn('fmain.js: Ingen <form> fundet på siden. Ingen validering tilføjet.');
+} else {
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     let valid = true;
 
-    // Fjern gamle fejl
-    document.querySelectorAll(".error").forEach(el => el.classList.remove("error"));
-    document.querySelectorAll(".error-message").forEach(el => el.remove());
+    // Fjern gamle fejl kun indenfor formen
+    form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    form.querySelectorAll('.error-message').forEach(el => el.remove());
 
     // Felter
     const fornavn = form.querySelector("[name='fornavn']");
@@ -18,48 +25,50 @@ form.addEventListener("submit", function(e) {
     const omraade = form.querySelector("[name='omraade']");
 
     function showError(input, message) {
-        valid = false;
-        input.classList.add("error");
+      if (!input) return;
+      valid = false;
+      input.classList.add('error');
 
-        const msg = document.createElement("div");
-        msg.className = "error-message";
-        msg.innerText = message;
+      const msg = document.createElement('div');
+      msg.className = 'error-message';
+      msg.innerText = message;
 
-        input.parentNode.insertBefore(msg, input.nextSibling);
+      // Sæt fejlbeskeden lige efter input'et
+      input.insertAdjacentElement('afterend', msg);
     }
 
-    // Validering
-    if (fornavn.value.trim() === "") {
-        showError(fornavn, "Indtast fornavn");
+    // Validering (tjek at felterne findes først)
+    if (!fornavn || fornavn.value.trim() === '') {
+      showError(fornavn, 'Indtast fornavn');
     }
 
-    if (efternavn.value.trim() === "") {
-        showError(efternavn, "Indtast efternavn");
+    if (!efternavn || efternavn.value.trim() === '') {
+      showError(efternavn, 'Indtast efternavn');
     }
 
-    if (email.value.trim() === "") {
-        showError(email, "Indtast email");
+    if (!email || email.value.trim() === '') {
+      showError(email, 'Indtast email');
     } else if (!validateEmail(email.value)) {
-        showError(email, "Ugyldig email");
+      showError(email, 'Ugyldig email');
     }
 
-    if (onsker.value === "") {
-        showError(onsker, "Vælg en mulighed");
+    if (!onsker || onsker.value === '') {
+      showError(onsker, 'Vælg en mulighed');
     }
 
-    if (omraade.value === "") {
-        showError(omraade, "Vælg et område");
+    if (!omraade || omraade.value === '') {
+      showError(omraade, 'Vælg et område');
     }
 
     // Hvis alt er validt
     if (valid) {
-        alert("Tak! Din tilmelding er sendt 🎉");
-        form.reset();
+      alert('Tak! Din tilmelding er sendt 🎉');
+      form.reset();
     }
-});
+  });
+}
 
 // Email validator
 function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
-</script>
