@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tilmeld dig nu</title>
+<link rel="stylesheet" href="Fstyle.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Tilmeld dig nu</h1>
+
+    <div class="subtitle">
+        Når du udfylder formularen, vil du blive kontaktet og høre mere om mulighederne som frivillig i Mellemfolkeligt Samvirke.
+    </div>
+
+    <form>
+        <label class="required">Fornavn</label>
+        <input type="text" name="fornavn" required>
+
+        <label class="required">Efternavn</label>
+        <input type="text" name="efternavn" required>
+
+        <label class="required">Email</label>
+        <input type="email" name="email" required>
+
+        <label class="required">Ønsker</label>
+        <select name="onsker" required>
+            <option value="">Vælg...</option>
+            <option>Akadamiet for håb og handling</option>
+            <option>Madretfærdighed</option>
+            <option>Fællesskabsgrupper</option>
+            <option>Frivillig arbejde</option>
+            <option>Lær noget</option>
+        </select>
+
+        <label class="required">Område</label>
+        <select name="omraade" required>
+            <option value="">Vælg...</option>
+            <option>København</option>
+            <option>Aarhus</option>
+            <option>Odense</option>
+        </select>
+
+        <button class="button" type="submit">Gøre en forskel</button>
+    </form>
+</div>
+
+<script src="fmain.js"></script>
+</body>
+</html>
