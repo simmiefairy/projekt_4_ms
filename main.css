@@ -602,18 +602,15 @@ img {vertical-align: middle;}
     width: 150px;
 }
 
-/* Udfyldningsformular */
+ /* Udfyldningsformular */
+ 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #ffffff;
 }
 
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-}
+
 
 h1 {
     color: #e53935;
@@ -622,6 +619,7 @@ h1 {
     margin-bottom: 10px;
     font-weight: bold;
 }
+
 
 .subtitle {
     font-size: 14px;
@@ -641,6 +639,10 @@ label {
     content: " *";
     color: red;
 }
+
+
+
+
 
 input, select {
     width: 100%;
@@ -666,6 +668,8 @@ select {
     background-repeat: no-repeat;
     background-position: right 12px center;
 }
+
+
 
 .error {
     border: 2px solid #e53935;
