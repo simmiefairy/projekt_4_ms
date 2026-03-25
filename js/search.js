@@ -1,3 +1,5 @@
+/* Brugt chatGPT og Claude AI til noget af søgefunktionens kode & W3schools hjemmeside*/
+/* Koden indeholder, Array, Funktion Drop-down, Filter, Funktion LukkAlt */
 const data = [
 { navn: "Gør en forskel", ikon: "→" },
 { navn: "Besøg os", ikon: "→" },
@@ -8,6 +10,7 @@ const data = [
 { navn: "Bliv medlem", ikon: "→" },
   { navn: "Kalender", ikon: "→" },
 ];
+/* Array */
 
 let erAktiv = false;
 
@@ -15,6 +18,8 @@ function visDropdown(query) {
     const dropdown = document.getElementById('dropdown');
     const container = document.getElementById('soegContainer');
     dropdown.innerHTML = '';
+
+    /*Funktion Drop-down*/
 
     const resultater = data.filter(function(item) {
         if (query === '') return true;
@@ -46,7 +51,7 @@ function visDropdown(query) {
 
     container.classList.add('search--dropdown-active');
 }
-
+/* LukkAlt */
 function lukkAlt() {
     const container = document.getElementById('soegContainer');
     const input = document.getElementById('soegInput');
