@@ -10,172 +10,180 @@
 </head>
 <body>
 
-    <header class="main-header">
+    <header class="header">
         <div class="container">
-            <div class="top-utility">
-                <a href="#"><img src="img/support.svg" alt="støt logo med en hånd der holder et hjerte">STØT</a>
+            <div class="utility">
+                <a href="#" class="utility__link">
+                    <img src="img/support.svg" alt="støt logo med en hand der holder et hjerte" class="utility__icon">STØT
+                </a>
 
-                
-                
-                <div class="soeg-container" id="soegContainer">
+                <div class="search" id="soegContainer">
+                    <!-- Soge-ikonet - altid synligt -->
+                    <button class="search__btn" id="soegIkon">
+                        <img src="img/search.svg" alt="ikon" />
+                    </button>
 
-  <!-- Søge-ikonet — altid synligt -->
-<button class="soeg-ikon" id="soegIkon">
-  <img src="img/search.svg" alt="ikon" />
-</button>
+                    <!-- Sogebaren - folder ud -->
+                    <div class="search__bar" id="soegBar">
+                        <input
+                            type="text"
+                            class="search__input"
+                            id="soegInput"
+                            placeholder="Søg her..."
+                            autocomplete="off"
+                        />
+                    </div>
 
-  <!-- Søgebaren — folder ud -->
-  <div class="soeg-bar" id="soegBar">
-    <input
-      type="text"
-      class="soeg-input"
-      id="soegInput"
-      placeholder="Søg her..."
-      autocomplete="off"
-    />
-  </div>
+                    <!-- Dropdown menu -->
+                    <div class="search__dropdown" id="dropdown"></div>
 
-  <!-- Dropdown menu -->
-  <div class="dropdown" id="dropdown"></div>
+                    <!-- Valgt element -->
+                    <div class="search__selected" id="valgtTekst"></div>
+                </div>
 
-  <!-- Valgt element -->
-  <div class="valgt-tekst" id="valgtTekst"></div>
-
-</div>
-                
-        
-
-                <a href="#"><img src="img/calendar.svg" alt="Kalender logo">KALENDER</a>
-                <a href="#"><img src="img/cart.svg" alt="Indkøbsvogns logo">SHOP</a>
-                <a href="#"><img src="img/eng_flag.png" alt="Englands flag"></a>
+                <a href="#" class="utility__link">
+                    <img src="img/calendar.svg" alt="Kalender logo" class="utility__icon">KALENDER
+                </a>
+                <a href="#" class="utility__link">
+                    <img src="img/cart.svg" alt="Indkobsvogns logo" class="utility__icon">SHOP
+                </a>
+                <a href="#" class="utility__link">
+                    <img src="img/eng_flag.png" alt="Englands flag" class="utility__icon">
+                </a>
             </div>
 
             <div class="nav-wrapper">
                 <div class="logo">
-                    <a href="index.html"><img src="img/logo_vector.svg" alt="Mellemfolkeligt Samvirke"></a>
+                    <a href="index.html">
+                        <img src="img/logo_vector.svg" alt="Mellemfolkeligt Samvirke" class="logo__image">
+                    </a>
                 </div>
-                
-                <button class="hamburger-btn" aria-label="Åbn menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+
+                <button class="hamburger" aria-label="Abn menu">
+                    <span class="hamburger__bar"></span>
+                    <span class="hamburger__bar"></span>
+                    <span class="hamburger__bar"></span>
                 </button>
 
-                <nav class="main-nav">
-                    <button class="close-btn" aria-label="Luk menu">✕</button>
-                    
-                    <ul>
-                        <li class="dropdown-container">
-                            <a href="#" class="nav-btn dropdown-toggle">OM OS <span>▼</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Hvem er vi?</a></li>
-                                <li><a href="#">Vores historie</a></li>
-                                <li><a href="#">Kontakt os</a></li>
+                <nav class="nav">
+                    <button class="close" aria-label="Luk menu">X</button>
+
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link nav__link--dropdown">OM OS <span class="nav__link-arrow">▼</span></a>
+                            <ul class="dropdown">
+                                <li class="dropdown__item"><a href="#" class="dropdown__link">Hvem er vi?</a></li>
+                                <li class="dropdown__item"><a href="#" class="dropdown__link">Vores historie</a></li>
+                                <li class="dropdown__item"><a href="#" class="dropdown__link">Kontakt os</a></li>
                             </ul>
                         </li>
 
-                        <li class="dropdown-container">
-                            <a href="#" class="nav-btn dropdown-toggle">GØR EN FORSKEL <span>▼</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Kampagner</a></li>
-                                <li><a href="#">Klima</a></li>
-                                <li><a href="#">Fattigdom</a></li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link nav__link--dropdown">GØR EN FORSKEL <span class="nav__link-arrow">▼</span></a>
+                            <ul class="dropdown">
+                                <li class="dropdown__item"><a href="#" class="dropdown__link">Kampagner</a></li>
+                                <li class="dropdown__item"><a href="#" class="dropdown__link">Klima</a></li>
+                                <li class="dropdown__item"><a href="#" class="dropdown__link">Fattigdom</a></li>
                             </ul>
                         </li>
 
-                        <li class="dropdown-container">
-                            <a href="#" class="nav-btn dropdown-toggle">BLIV MEDLEM <span>▼</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Medlemsfordele</a></li>
-                                <li><a href="#">Giv et bidrag</a></li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link nav__link--dropdown">BLIV MEDLEM <span class="nav__link-arrow">▼</span></a>
+                            <ul class="dropdown">
+                                <li class="dropdown__item"><a href="#" class="dropdown__link">Medlemsfordele</a></li>
+                                <li class="dropdown__item"><a href="#" class="dropdown__link">Giv et bidrag</a></li>
                             </ul>
                         </li>
 
-                        <li><a href="volunteer.html" class="btn-red">FRIVILLIG</a></li>
+                        <li class="nav__item">
+                            <a href="volunteer.html" class="nav__link--cta">FRIVILLIG</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
-<section class="form-wrapper">
-    <div class="container">
-        <h1>Tilmeld dig nu</h1>
 
-        <div class="subtitle">
-            Når du udfylder formularen, vil du blive kontaktet og høre mere om mulighederne som frivillig i Mellemfolkeligt Samvirke.
-        </div>
-
-        <form>
-            <label class="required">Fornavn</label>
-            <input type="text" name="fornavn" required>
-
-            <label class="required">Efternavn</label>
-            <input type="text" name="efternavn" required>
-
-            <label class="required">Email</label>
-            <input type="email" name="email" required>
-
-            <label class="required">Ønsker</label>
-            <select name="onsker" required>
-                <option value="">Vælg...</option>
-                <option>Akadamiet for håb og handling</option>
-                <option>Madretfærdighed</option>
-                <option>Fællesskabsgrupper</option>
-                <option>Frivillig arbejde</option>
-                <option>Lær noget</option>
-            </select>
-
-            <label class="required">Område</label>
-            <select name="omraade" required>
-                <option value="">Vælg...</option>
-                <option>København</option>
-                <option>Aarhus</option>
-                <option>Odense</option>
-            </select>
-
-            <button class="button" type="submit">Gøre en forskel</button>
-        </form>
-    </div>
-</section>
-    <section class="partner-bar">
+    <section class="form">
         <div class="container">
-            <div class="partner-logos">
-                <img src="img/DEF-logo.png" alt="Dansk El-Forbund">
-                <img id="duf-logo" src="img/DUF-logo.svg" alt="DUF">
-                <img src="img/DLF-logo.png" alt="Lærerforening">
+            <h1 class="form__title">Tilmeld dig nu</h1>
+
+            <div class="form__subtitle">
+                Nar du udfylder formularen, vil du blive kontaktet og hore mere om mulighederne som frivillig i Mellemfolkeligt Samvirke.
+            </div>
+
+            <form>
+                <label class="form__label form__label--required">Fornavn</label>
+                <input type="text" name="fornavn" class="form__input" required>
+
+                <label class="form__label form__label--required">Efternavn</label>
+                <input type="text" name="efternavn" class="form__input" required>
+
+                <label class="form__label form__label--required">Email</label>
+                <input type="email" name="email" class="form__input" required>
+
+                <label class="form__label form__label--required">Ønsker</label>
+                <select name="onsker" class="form__select" required>
+                    <option value="">Vælg...</option>
+                    <option>Akadamiet for håb og handling</option>
+                    <option>Madretfærdighed</option>
+                    <option>Fællesskabsgrupper</option>
+                    <option>Frivillig arbejde</option>
+                    <option>Lær noget</option>
+                </select>
+
+                <label class="form__label form__label--required">Område</label>
+                <select name="omraade" class="form__select" required>
+                    <option value="">Vaelg...</option>
+                    <option>København</option>
+                    <option>Aarhus</option>
+                    <option>Odense</option>
+                </select>
+
+                <button class="btn btn--submit" type="submit">Gør en forskel</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="partner">
+        <div class="container">
+            <div class="partner__logos">
+                <img src="img/DEF-logo.png" alt="Dansk El-Forbund" class="partner__logo">
+                <img src="img/DUF-logo.svg" alt="DUF" class="partner__logo partner__logo--duf">
+                <img src="img/DLF-logo.png" alt="Laererforening" class="partner__logo">
             </div>
         </div>
     </section>
 
-    <footer class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h2>FØLG MED</h2>
-                <p>Få nyheder, viden og muligheder for at handle direkte i din indbakke.</p>
-                <button class="btn-tilmeld">TILMELD</button>
-                <p class="address-info">
+    <footer class="footer">
+        <div class="container footer__grid">
+            <div class="footer__col">
+                <h2 class="footer__title">FØLG MED</h2>
+                <p class="footer__text">Fa nyheder, viden og muligheder for at handle direkte i din indbakke.</p>
+                <button class="btn btn--subscribe">TILMELD</button>
+                <p class="footer__address">
                     <strong>MELLEMFOLKELIGT SAMVIRKE</strong><br>
-                    Fælledvej 12 / 2200 København N / Tlf.: 77 31 00 00 / Mail: ms@ms.dk
+                    Faelledvej 12 / 2200 Kobenhavn N / Tlf.: 77 31 00 00 / Mail: ms@ms.dk
                 </p>
             </div>
-            <div class="footer-col">
-                <h2>GENVEJE</h2>
-                <ul>
-                    <li><a href="#">Ofte stillede spørgsmål</a></li>
-                    <li><a href="#">Opgaver i udbud</a></li>
-                    <li><a href="#">Privatlivspolitik</a></li>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">Indsamlingsaktiviteter</a></li>
-                    <li><a href="#">Indberet dit cpr.nr.</a></li>
+            <div class="footer__col">
+                <h2 class="footer__title">GENVEJE</h2>
+                <ul class="footer__list">
+                    <li><a href="#" class="footer__link">Ofte stillede sporgsmal</a></li>
+                    <li><a href="#" class="footer__link">Opgaver i udbud</a></li>
+                    <li><a href="#" class="footer__link">Privatlivspolitik</a></li>
+                    <li><a href="#" class="footer__link">Cookies</a></li>
+                    <li><a href="#" class="footer__link">Indsamlingsaktiviteter</a></li>
+                    <li><a href="#" class="footer__link">Indberet dit cpr.nr.</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h2>ENGAGÉR DIG</h2>
-                <p>Debat, nyheder og viden.<br>Mød os her:</p>
-                <div class="social-icons">
-                    <span class="social-circle">f</span> 
-                    <span class="social-circle">i</span> 
-                    <span class="social-circle">in</span>
+            <div class="footer__col">
+                <h2 class="footer__title">ENGAGER DIG</h2>
+                <p class="footer__text">Debat, nyheder og viden.<br>Mød os her:</p>
+                <div class="social">
+                    <span class="social__icon">f</span>
+                    <span class="social__icon">i</span>
+                    <span class="social__icon">in</span>
                 </div>
             </div>
         </div>

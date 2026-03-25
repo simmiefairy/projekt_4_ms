@@ -12,153 +12,157 @@ const data = [
 let erAktiv = false;
 
 function visDropdown(query) {
-  const dropdown  = document.getElementById('dropdown');
-  const container = document.getElementById('soegContainer');
-  dropdown.innerHTML = '';
+    const dropdown = document.getElementById('dropdown');
+    const container = document.getElementById('soegContainer');
+    dropdown.innerHTML = '';
 
-  const resultater = data.filter(function(item) {
-    if (query === '') return true;
-    return item.navn.toLowerCase().includes(query.toLowerCase());
-  });
-
-  if (resultater.length === 0) {
-    dropdown.innerHTML = '<div class="ingen-resultater">Ingen resultater fundet</div>';
-    container.classList.add('dropdown-aktiv');
-    return;
-  }
-
-  for (let i = 0; i < resultater.length; i++) {
-    const item = document.createElement('div');
-    item.classList.add('dropdown-item');
-    item.innerHTML =
-      '<span class="ikon">' + resultater[i].ikon + '</span>' +
-      resultater[i].navn;
-
-    item.addEventListener('click', function() {
-      document.getElementById('soegInput').value = resultater[i].navn;
-      document.getElementById('valgtTekst').textContent = '✓ Du valgte: ' + resultater[i].navn;
-      container.classList.remove('dropdown-aktiv');
-      container.classList.add('har-valgt');
+    const resultater = data.filter(function(item) {
+        if (query === '') return true;
+        return item.navn.toLowerCase().includes(query.toLowerCase());
     });
 
-    dropdown.appendChild(item);
-  }
+    if (resultater.length === 0) {
+        dropdown.innerHTML = '<div class="search__no-results">Ingen resultater fundet</div>';
+        container.classList.add('search--dropdown-active');
+        return;
+    }
 
-  container.classList.add('dropdown-aktiv');
+    for (let i = 0; i < resultater.length; i++) {
+        const item = document.createElement('div');
+        item.classList.add('search__dropdown-item');
+        item.innerHTML =
+            '<span class="search__dropdown-icon">' + resultater[i].ikon + '</span>' +
+            resultater[i].navn;
+
+        item.addEventListener('click', function() {
+            document.getElementById('soegInput').value = resultater[i].navn;
+            document.getElementById('valgtTekst').textContent = 'Du valgte: ' + resultater[i].navn;
+            container.classList.remove('search--dropdown-active');
+            container.classList.add('search--has-selection');
+        });
+
+        dropdown.appendChild(item);
+    }
+
+    container.classList.add('search--dropdown-active');
 }
 
 function lukkAlt() {
-  const container = document.getElementById('soegContainer');
-  const input     = document.getElementById('soegInput');
-  container.classList.remove('aktiv', 'dropdown-aktiv');
-  input.value = '';
-  document.getElementById('dropdown').innerHTML = '';
-  erAktiv = false;
+    const container = document.getElementById('soegContainer');
+    const input = document.getElementById('soegInput');
+    container.classList.remove('search--active', 'search--dropdown-active');
+    input.value = '';
+    document.getElementById('dropdown').innerHTML = '';
+    erAktiv = false;
 }
 
 document.getElementById('soegIkon').addEventListener('click', function() {
-  const container = document.getElementById('soegContainer');
-  const input     = document.getElementById('soegInput');
+    const container = document.getElementById('soegContainer');
+    const input = document.getElementById('soegInput');
 
-  if (erAktiv) {
-    lukkAlt();
-  } else {
-    container.classList.add('aktiv');
-    erAktiv = true;
-    setTimeout(function() {
-      input.focus();
-    }, 420);
-  }
+    if (erAktiv) {
+        lukkAlt();
+    } else {
+        container.classList.add('search--active');
+        erAktiv = true;
+        setTimeout(function() {
+            input.focus();
+        }, 420);
+    }
 });
 
 document.getElementById('soegInput').addEventListener('focus', function() {
-  visDropdown(this.value.trim());
+    visDropdown(this.value.trim());
 });
 
 document.getElementById('soegInput').addEventListener('input', function() {
-  document.getElementById('soegContainer').classList.remove('har-valgt');
-  visDropdown(this.value.trim());
+    document.getElementById('soegContainer').classList.remove('search--has-selection');
+    visDropdown(this.value.trim());
 });
 
 document.addEventListener('click', function(e) {
-  const container = document.getElementById('soegContainer');
-  if (!container.contains(e.target)) {
-    lukkAlt();
-  }
+    const container = document.getElementById('soegContainer');
+    if (!container.contains(e.target)) {
+        lukkAlt();
+    }
 });
 
 /* Frivillig siden */
-// fmain.js — clean, robust form validation for Findex.html / Fstyle.css
-
-// This file should be included in the page as:
-// <script src="fmain.js"></script>
+// Form validation for volunteer page
 
 const form = document.querySelector('form');
 
 if (!form) {
-  console.warn('fmain.js: Ingen <form> fundet på siden. Ingen validering tilføjet.');
+    console.warn('search.js: Ingen <form> fundet pa siden. Ingen validering tilfojet.');
 } else {
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    let valid = true;
+        let valid = true;
 
-    // Fjern gamle fejl kun indenfor formen
-    form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
-    form.querySelectorAll('.error-message').forEach(el => el.remove());
+        // Fjern gamle fejl kun indenfor formen
+        form.querySelectorAll('.form__input--error, .form__select--error').forEach(el => {
+            el.classList.remove('form__input--error', 'form__select--error');
+        });
+        form.querySelectorAll('.form__error').forEach(el => el.remove());
 
-    // Felter
-    const fornavn = form.querySelector("[name='fornavn']");
-    const efternavn = form.querySelector("[name='efternavn']");
-    const email = form.querySelector("[name='email']");
-    const onsker = form.querySelector("[name='onsker']");
-    const omraade = form.querySelector("[name='omraade']");
+        // Felter
+        const fornavn = form.querySelector("[name='fornavn']");
+        const efternavn = form.querySelector("[name='efternavn']");
+        const email = form.querySelector("[name='email']");
+        const onsker = form.querySelector("[name='onsker']");
+        const omraade = form.querySelector("[name='omraade']");
 
-    function showError(input, message) {
-      if (!input) return;
-      valid = false;
-      input.classList.add('error');
+        function showError(input, message) {
+            if (!input) return;
+            valid = false;
 
-      const msg = document.createElement('div');
-      msg.className = 'error-message';
-      msg.innerText = message;
+            if (input.tagName === 'SELECT') {
+                input.classList.add('form__select--error');
+            } else {
+                input.classList.add('form__input--error');
+            }
 
-      // Sæt fejlbeskeden lige efter input'et
-      input.insertAdjacentElement('afterend', msg);
-    }
+            const msg = document.createElement('div');
+            msg.className = 'form__error';
+            msg.innerText = message;
 
-    // Validering (tjek at felterne findes først)
-    if (!fornavn || fornavn.value.trim() === '') {
-      showError(fornavn, 'Indtast fornavn');
-    }
+            // Saet fejlbeskeden lige efter input'et
+            input.insertAdjacentElement('afterend', msg);
+        }
 
-    if (!efternavn || efternavn.value.trim() === '') {
-      showError(efternavn, 'Indtast efternavn');
-    }
+        // Validering (tjek at felterne findes forst)
+        if (!fornavn || fornavn.value.trim() === '') {
+            showError(fornavn, 'Indtast fornavn');
+        }
 
-    if (!email || email.value.trim() === '') {
-      showError(email, 'Indtast email');
-    } else if (!validateEmail(email.value)) {
-      showError(email, 'Ugyldig email');
-    }
+        if (!efternavn || efternavn.value.trim() === '') {
+            showError(efternavn, 'Indtast efternavn');
+        }
 
-    if (!onsker || onsker.value === '') {
-      showError(onsker, 'Vælg en mulighed');
-    }
+        if (!email || email.value.trim() === '') {
+            showError(email, 'Indtast email');
+        } else if (!validateEmail(email.value)) {
+            showError(email, 'Ugyldig email');
+        }
 
-    if (!omraade || omraade.value === '') {
-      showError(omraade, 'Vælg et område');
-    }
+        if (!onsker || onsker.value === '') {
+            showError(onsker, 'Vælg en mulighed');
+        }
 
-    // Hvis alt er validt
-    if (valid) {
-      alert('Tak! Din tilmelding er sendt 🎉');
-      form.reset();
-    }
-  });
+        if (!omraade || omraade.value === '') {
+            showError(omraade, 'Vælg et omrade');
+        }
+
+        // Hvis alt er validt
+        if (valid) {
+            alert('Tak! Din tilmelding er sendt');
+            form.reset();
+        }
+    });
 }
 
 // Email validator
 function validateEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }

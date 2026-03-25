@@ -1,7 +1,7 @@
 
-const navMenu = document.querySelector('.main-nav');
-const burgerBtn = document.querySelector('.hamburger-btn');
-const closeBtn = document.querySelector('.close-btn');
+const navMenu = document.querySelector('.nav');
+const burgerBtn = document.querySelector('.hamburger');
+const closeBtn = document.querySelector('.close');
 
 const menuStatus = {
     isOpen: false
@@ -9,11 +9,11 @@ const menuStatus = {
 
 function toggleMenu() {
     if (menuStatus.isOpen === false) {
-        navMenu.classList.add('active');
-        menuStatus.isOpen = true; 
-        console.log("Menuen blev åbnet");
+        navMenu.classList.add('nav--active');
+        menuStatus.isOpen = true;
+        console.log("Menuen blev abnet");
     } else {
-        navMenu.classList.remove('active');
+        navMenu.classList.remove('nav--active');
         menuStatus.isOpen = false;
         console.log("Menuen blev lukket");
     }
@@ -22,23 +22,22 @@ function toggleMenu() {
 burgerBtn.addEventListener('click', toggleMenu);
 closeBtn.addEventListener('click', toggleMenu);
 
-const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+const dropdownToggles = document.querySelectorAll('.nav__link--dropdown');
 
 for (let i = 0; i < dropdownToggles.length; i++) {
-    
-    let toggleKnap = dropdownToggles[i]; 
+
+    let toggleKnap = dropdownToggles[i];
 
     toggleKnap.addEventListener('click', function(event) {
-        
 
         if (window.innerWidth <= 900) {
-            
-            event.preventDefault(); 
 
-            let underMenu = toggleKnap.parentElement.querySelector('.dropdown-menu');
+            event.preventDefault();
+
+            let underMenu = toggleKnap.parentElement.querySelector('.dropdown');
 
             if (underMenu !== null) {
-                underMenu.classList.toggle('show');
+                underMenu.classList.toggle('dropdown--active');
             }
         }
     });
