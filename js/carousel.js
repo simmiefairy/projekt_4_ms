@@ -1,3 +1,4 @@
+// Jeg har brugt Ai til hjælp med koden, tjek bilag (Zipfil -> Ai prompter -> Ai Prompt Mads.pdf)
 
 let slideIndex = 0;
 const slides = document.querySelectorAll(".mySlides");
