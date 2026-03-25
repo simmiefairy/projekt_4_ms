@@ -102,9 +102,6 @@ body {
 /* ================================
    NAV BLOCK (Main navigation)
    ================================ */
-.nav {
-    /* Base styles */
-}
 
 .nav__list {
     display: flex;
@@ -167,9 +164,7 @@ body {
     display: flex !important;
 }
 
-.dropdown__item {
-    /* List item styles */
-}
+
 
 .dropdown__link {
     display: block;
@@ -188,9 +183,7 @@ body {
 /* ================================
    CONTENT BLOCK (Main content area)
    ================================ */
-.content {
-    /* Main content wrapper */
-}
+
 
 .content__title {
     color: var(--ms-red);
@@ -378,9 +371,7 @@ body {
     gap: 40px;
 }
 
-.footer__col {
-    /* Column styles */
-}
+
 
 .footer__title {
     font-size: 0.9rem;
@@ -655,9 +646,7 @@ body {
 /* ================================
    FORM BLOCK
    ================================ */
-.form {
-    /* Form wrapper */
-}
+
 
 .form__title {
     color: #e53935;
