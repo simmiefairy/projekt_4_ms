@@ -1,3 +1,4 @@
+// Jeg har brugt Ai til hjælp med koden, tjek bilag (Zipfil -> Ai prompter -> Ai Prompt Simone.pdf)
 
 const navMenu = document.querySelector('.nav');
 const burgerBtn = document.querySelector('.hamburger');
