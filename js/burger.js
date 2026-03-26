@@ -20,6 +20,7 @@ function toggleMenu() {
     }
 }
 
+// starter en event, så når man klikker så gør den noget //
 burgerBtn.addEventListener('click', toggleMenu);
 closeBtn.addEventListener('click', toggleMenu);
 
